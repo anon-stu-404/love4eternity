@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>চিরন্তন প্রেমের গল্প - তোমার জন্য</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ffe6eb;
+            font-family: 'Hind Siliguri', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Sweet Consent Modal */
+        .consent-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(255, 105, 180, 0.2);
+            z-index: 1000;
+            animation: modalEntrance 0.8s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        }
+
+        .consent-heart {
+            font-size: 3rem;
+            color: #ff69b4;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        .consent-buttons button {
+            border: none;
+            padding: 12px 30px;
+            margin: 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .consent-yes {
+            background: linear-gradient(45deg, #ff69b4, #ff96c5);
+            color: white;
+        }
+
+        .consent-no {
+            background: #f8f8f8;
+            color: #666;
+        }
+
+        /* Love Letter Styles */
+        .love-letter {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 1s ease;
+            color: #4a4a4a;
+        }
+
+        .letter-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #ff69b4;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-bottom: 2px solid #ffb3d9;
+        }
+
+        .poem-line {
+            margin: 1.8rem 0;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: textReveal 0.8s ease forwards;
+        }
+
+        /* Animations */
+        @keyframes modalEntrance {
+            0% { transform: translate(-50%, -60%) scale(0.8); opacity: 0; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes textReveal {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Background Effects */
+        .love-effect {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 182, 193, 0.1) 0%, transparent 70%);
+            animation: pulse 8s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.05); opacity: 0.5; }
+        }
+
+        /* Floating Petals */
+        .petal {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            background: #ffb3d9;
+            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+            animation: floatPetals 8s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes floatPetals {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+
+        /* Cursor Heart */
+        .cursor-heart {
+            position: fixed;
+            pointer-events: none;
+            transition: transform 0.2s ease-out;
+            color: #ff69b4;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sweet Consent Modal -->
+    <div class="consent-modal">
+        <div class="consent-heart">💖</div>
+        <h2 style="margin: 1rem 0; color: #ff69b4;">আমাদের বিশেষ মুহূর্তে স্বাগতম</h2>
+        <p style="margin-bottom: 1.5rem; color: #666;">আমরা কি কিছু মৃদু সুর যোগ করি? 🎶</p>
+        <div class="consent-buttons">
+            <button class="consent-yes" onclick="startExperience(true)">হ্যাঁ, নিশ্চয়ই ❤️</button>
+            <button class="consent-no" onclick="startExperience(false)">এখন না, ধন্যবাদ</button>
+        </div>
+    </div>
+
+    <!-- Love Letter Content -->
+    <div class="love-letter" id="letterContent">
+        <h1 class="letter-title">তোমাকে নিয়ে লেখা অনন্ত গল্পের শুরু...</h1>
+        <div class="poem-container">
+            <div class="poem-line">আমি কবি নই, তবুও আজ মনে হয়, শব্দেরা নিজেরাই তোমার জন্য কবিতা হয়ে ওঠে।</div>
+<div class="poem-line">আমি শিল্পী নই, তবুও হৃদয়ে তুমি এক মহামূল্যবান চিত্র হয়ে জেগে আছো।</div>
+
+<div class="poem-line">তোমার হাসির কোমলতা যেন শ্রাবণের নরম বৃষ্টি,</div>
+<div class="poem-line">যার ভেজায় আমি হারিয়ে যেতে চাই,</div>
+<div class="poem-line">নীরব আনন্দের বুননে।</div>
+
+<div class="poem-line">তুমি আমার বহুদিনের স্বপ্নের অনুপম সন্ধান,</div>
+<div class="poem-line">যেমন শতাব্দীর প্রহর পেরিয়ে কোনো চিরচেনা আত্মাকে খুঁজে পাওয়া হয়।</div>
+<div class="poem-line">তোমার চোখের ভাষায় আমি দেখি নিরব প্রেমের গভীর সমুদ্র,</div>
+<div class="poem-line">যেখানে শব্দের প্রয়োজন নেই —</div>
+<div class="poem-line">শুধু অনুভবই যথেষ্ট।</div>
+
+<div class="poem-line">আমি সাজিয়েছি এক স্বপ্নীল আকাশ,</div>
+<div class="poem-line">যেখানে প্রতিটি তারা সাক্ষ্য দিচ্ছে —</div>
+<div class="poem-line">এই অনুভূতির, এই একান্ত চাওয়ার।</div>
+
+<div class="poem-line">তুমি সেই প্রজাপতি,</div>
+<div class="poem-line">যে রং ছড়িয়ে দিয়েছে আমার নিস্তরঙ্গ জীবনে,</div>
+<div class="poem-line">আর তোমার উপস্থিতিতে আমার প্রতিটি দিন যেন এক অনন্ত বসন্ত।</div>
+
+<div class="poem-line">তোমাকে চাই কোনো শর্তহীন প্রার্থনায়,</div>
+<div class="poem-line">চাই এমনভাবে, যেন তোমার হাসির জন্য আমার সমস্ত ক্লান্তি হারিয়ে যায়।</div>
+<div class="poem-line">তোমার পাশে হাঁটতে চাই নিঃশব্দ পথে,</div>
+<div class="poem-line">চাই নিভৃত বিকেলে তোমার চোখের ভেতর হারিয়ে যেতে।</div>
+
+<div class="poem-line">এই চাওয়া কোনো দেহজ নয়, কোনো আবেগের হঠকারিতা নয় —</div>
+<div class="poem-line">এ চাওয়া গভীর, শান্ত, ও অন্তরের সমস্ত কোমলতার মিলিত আকাঙ্ক্ষা।</div>
+
+<div class="poem-line">তুমি আমার অনুভবের পরিণতি,</div>
+<div class="poem-line">তুমি সেই গল্পের শুরু,</div>
+<div class="poem-line">যে গল্প কোনোদিন ফুরিয়ে যাবে না,</div>
+<div class="poem-line">যেখানে প্রতিটি পৃষ্ঠা তোমার নামেই লেখা থাকবে।</div>
+
+<div class="poem-line">আমি শুধু চাই, এই জীবনভরে, প্রতিটি নিঃশ্বাসে, প্রতিটি নিরবতায় —</div>
+<div class="poem-line">তুমি থেকো।</div>
+            <!-- Add all other poem lines here -->
+        </div>
+    </div>
+
+    <!-- Background Effects -->
+    <div class="love-effect"></div>
+    <audio id="bgMusic" src="music.mp3" loop></audio>
+
+    <script>
+        // Smooth Experience Starter
+        function startExperience(playMusic) {
+            // Remove modal
+            document.querySelector('.consent-modal').style.display = 'none';
+            
+            // Show letter with fade-in
+            document.getElementById('letterContent').style.opacity = '1';
+            
+            // Add floating petals
+            createPetals();
+            
+            // Start music if selected
+            if(playMusic) {
+                const music = document.getElementById('bgMusic');
+                music.volume = 0.4;
+                music.play().catch(() => {});
+            }
+
+            // Animate text lines sequentially
+            animateLines();
+        }
+
+        // Create floating petals
+        function createPetals() {
+            for(let i = 0; i < 30; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                petal.style.left = Math.random() * 100 + 'vw';
+                petal.style.animationDelay = Math.random() * 8 + 's';
+                petal.style.animationDuration = (Math.random() * 4 + 6) + 's';
+                document.body.appendChild(petal);
+            }
+        }
+
+        // Animate poem lines with delay
+        function animateLines() {
+            const lines = document.querySelectorAll('.poem-line');
+            lines.forEach((line, index) => {
+                line.style.animationDelay = index * 0.3 + 's';
+            });
+        }
+
+        // Cursor Heart Effect
+        document.addEventListener('mousemove', (e) => {
+            const heart = document.createElement('div');
+            heart.className = 'cursor-heart';
+            heart.style.left = e.pageX + 'px';
+            heart.style.top = e.pageY + 'px';
+            heart.innerHTML = '♥';
+            heart.style.fontSize = '20px';
+            heart.style.opacity = '0.7';
+            
+            setTimeout(() => {
+                heart.style.opacity = '0';
+                heart.style.transform = 'translateY(-30px) scale(0.5)';
+                setTimeout(() => heart.remove(), 300);
+            }, 50);
+        });
+    </script>
+</body>
+  </html>
